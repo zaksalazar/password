@@ -39,17 +39,17 @@ console.log(useSpecials)
 //arrange selected numbers and characters that can be randomized 
 var potentialCharacters =[]
 if (useUppercase) {
-    potentialCharacters = potentialCharacters.concat(useUppercase)
+    potentialCharacters = potentialCharacters.concat(uppercase)
 }
 
 if (useLowercase) {
-    potentialCharacters = potentialCharacters.concat(useLowercase)
+    potentialCharacters = potentialCharacters.concat(lowercase)
 }
 
 if (useNumbers) {
-  potentialCharacters = potentialCharacters.concat(useNumbers)
+  potentialCharacters = potentialCharacters.concat(numbers)
 }
 
 if (useSpecials) {
-    potentialCharacters = potentialCharacters.concat(useSpecials)
+    potentialCharacters = potentialCharacters.concat(specials)
 }
