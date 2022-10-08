@@ -35,3 +35,21 @@ console.log(useNumbers)
 //step 5 ask user to use special character?
 var useSpecials = confirm('Would you like to include special characters?')
 console.log(useSpecials) 
+
+//arrange selected numbers and characters that can be randomized 
+var potentialCharacters =[]
+if (useUppercase) {
+    potentialCharacters = potentialCharacters.concat(useUppercase)
+}
+
+if (useLowercase) {
+    potentialCharacters = potentialCharacters.concat(useLowercase)
+}
+
+if (useNumbers) {
+  potentialCharacters = potentialCharacters.concat(useNumbers)
+}
+
+if (useSpecials) {
+    potentialCharacters = potentialCharacters.concat(useSpecials)
+}
