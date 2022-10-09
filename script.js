@@ -1,6 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowercase = uppercase.map(letter => letter.toLowerCase())
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", "|", ";", ":", "'", ",", ".", "<", ">", "/", "?", "~", "`"]
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -12,20 +18,20 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Alphabet, Numbers, Special Characters
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var lowercase = uppercase.map(letter => letter.toLowerCase())
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", "|", ";", ":", "'", ",", ".", "<", ">", "/", "?", "~", "`"]
-
 function getRandomInt(max) {
-  math.random()
-     return math.ceil(math.random() * max)
+  Math.random()
+     return Math.ceil(Math.random() * max)
 }
 
-function generatePassword(){
+function generatePassword() {
 //Step 1 ask user how many characters?
   var passwordLength = prompt("How many charcters would you like your password to be? (8-128)", "12") 
+
+  //password length perameters
+if (passwordLength <8 || passwordLength > 128) {
+  alert ("password must be betweeb 8 and 128 characters")
+  return generatePassword(); 
+}
   
 //step 2 ask user to use uppercase?
   var useUppercase = confirm('Would you like to include uppercase letters?')
@@ -41,7 +47,7 @@ function generatePassword(){
   
 
 //arrange selected numbers and characters that can be randomized 
-var potentialCharacters = []
+  var potentialCharacters = []
 if (useUppercase) {
     potentialCharacters = potentialCharacters.concat(uppercase)
 }
@@ -60,8 +66,10 @@ if (useSpecials) {
 
 //create the password length 
 
-var password = " "
+var password = ''
 for (var i = 0; i < passwordLength; i++) {
-  password = password + potentialCharacters[Math.random(potentialCharacters.length)]
+  password = password + potentialCharacters[getRandomInt(potentialCharacters.length)]
 }
-return password }
+return password 
+
+}
