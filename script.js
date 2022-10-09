@@ -26,19 +26,19 @@ function getRandomInt(max) {
 function generatePassword(){
 //Step 1 ask user how many characters?
   var passwordLength = prompt("How many charcters would you like your password to be? (8-128)", "12") 
-  console.log(passwordLength)
+  
 //step 2 ask user to use uppercase?
   var useUppercase = confirm('Would you like to include uppercase letters?')
-  console.log(useUppercase)
+  
 //step 3 ask uder to use lowercase? 
   var useLowercase = confirm('Would you like to include lowercase letters?')
-  console.log(useLowercase)
+  
 //step 4 ask user to use numbers?
   var useNumbers = confirm('Would you like to include numbers?')
-  console.log(useNumbers) 
+  
 //step 5 ask user to use special character?
   var useSpecials = confirm('Would you like to include special characters?')
-  console.log(useSpecials) 
+  
 
 //arrange selected numbers and characters that can be randomized 
 var potentialCharacters = []
@@ -61,7 +61,7 @@ if (useSpecials) {
 //create the password length 
 
 var password = " "
-for (var i = 0; i < passwordLength; i ++) {
+for (var i = 0; i < passwordLength; i++) {
   password = password + potentialCharacters[Math.random(potentialCharacters.length)]
 }
 return password }
