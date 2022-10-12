@@ -20,7 +20,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function getRandomInt(max) {
   Math.random()
-     return Math.ceil(Math.random() * max)
+     return Math.floor(Math.random() * max)
 }
 
 function generatePassword() {
