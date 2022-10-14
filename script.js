@@ -27,7 +27,7 @@ function generatePassword() {
 //Step 1 ask user how many characters?
   var passwordLength = prompt("How many charcters would you like your password to be? (8-128)", "12") 
 
-  //password length perameters
+  //password length perameters. Alert is given if user selection does not meet perameters. 
 if (passwordLength <8 || passwordLength > 128) {
   alert ("password must be betweeb 8 and 128 characters")
   return generatePassword(); 
